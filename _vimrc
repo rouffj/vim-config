@@ -116,5 +116,8 @@
     autocmd BufRead *.phps set filetype=php
     autocmd BufRead *.phpd set filetype=php
 
+" Makefile
+    autocmd FileType make set noexpandtab
+
 " use :W to force save when forgot to open file in root
     command W w !sudo tee % > /dev/null
