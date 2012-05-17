@@ -119,5 +119,8 @@
 " Makefile
     autocmd FileType make set noexpandtab
 
+" Snipmate
+    let g:snips_author = "Joseph Rouff <rouffj@gmail.com>"
+
 " use :W to force save when forgot to open file in root
     command W w !sudo tee % > /dev/null
