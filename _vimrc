@@ -15,13 +15,11 @@
     set background=dark                     " dark background is better!
     let php_sql_query = 1                   " SQL queries
     let php_htmlInStrings = 1               " HTML
+    colorscheme solarized
     if has('gui_running')
         set guifont=Monospace\ 8
         let g:solarized_style="light"
         let g:solarized_contrast="high"
-        colorscheme solarized
-    else
-        colorscheme desertEx
     endif
 
 " UI
