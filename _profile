@@ -1,0 +1,4 @@
+export PATH=/usr/local/bin:$PATH
+
+# Allow to fix issues when editing file with VIM inside TMUX
+alias tmux="TERM=screen-256color-bce tmux"
