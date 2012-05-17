@@ -14,3 +14,7 @@ In order to install this config follow this steps:
     $ cd ~/
     $ git clone git://github.com/rouffj/vim-config.git
     $ cd ~/vim-config; make install
+
+To get help:
+
+    $ make help
