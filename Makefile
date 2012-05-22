@@ -17,11 +17,12 @@ symlink: _clean
 	ln -s $(DOTFILES_DIR)/_tmux $(HOME)/.tmux.conf
 	ln -s $(DOTFILES_DIR)/vim $(HOME)/.vim
 	ln -s $(DOTFILES_DIR)/_profile $(HOME)/.profile
+	ln -s $(DOTFILES_DIR)/_gitignore $(HOME)/.gitignore
 
 # Private tasks #
 
 _clean:
-	rm -f $(HOME)/.vimrc $(HOME)/.gitconfig $(HOME)/.screenrc $(HOME)/.tmux.conf $(HOME)/.vim $(HOME)/.profile
+	rm -f $(HOME)/.vimrc $(HOME)/.gitconfig $(HOME)/.screenrc $(HOME)/.tmux.conf $(HOME)/.vim $(HOME)/.profile $(HOME)/.gitignore
 
 _submodule:
 	git submodule update --init
