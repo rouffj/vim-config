@@ -85,6 +85,8 @@
 " NERDTree
     let g:NERDTreeWinPos = "right"
 
+" Ack
+    let g:ackprg="ack-grep -H --nocolor --nogroup --column" "Only for Debian/Ubuntu were name is not ack
 
 " MiniBufXplorer settings
     let g:miniBufExplMaxSize=2              " set max size to 2 lines
@@ -110,7 +112,7 @@
     vnoremap <leader>d :call PhpDocRange()<CR>
 
 " twig
-    autocmd BufRead *.twig set filetype=htmltwig
+    autocmd BufRead *.twig set filetype=htmltwig.html
     autocmd BufRead *.phps set filetype=php
     autocmd BufRead *.phpd set filetype=php
 

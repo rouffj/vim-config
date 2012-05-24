@@ -9,6 +9,8 @@ help:
 install: _submodule symlink
 	@echo "Compiling command-t extension..."
 	@cd $(DOTFILES_DIR)/vim/bundle/command-t; rake make $(NO_OUTPUT);
+	@echo "Installing ack bundle..."
+	@cd $(DOTFILES_DIR)/vim/bundle/ack; rake install $(NO_OUTPUT);
 
 symlink: _clean
 	ln -s $(DOTFILES_DIR)/_vimrc $(HOME)/.vimrc
