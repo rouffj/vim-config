@@ -117,7 +117,7 @@
     autocmd BufRead *.phpd set filetype=php
 
 " Makefile
-    autocmd FileType make set noexpandtab
+"    autocmd FileType make set noexpandtab
 
 " Snipmate
     let g:snips_author = "Joseph Rouff <rouffj@gmail.com>"
