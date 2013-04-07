@@ -1,5 +1,7 @@
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/Cellar/php53/5.3.17/bin:/usr/local/Cellar/php54/5.4.7/bin/php:/usr/local/sbin:/usr/local/bin:$PATH
 
 # Allow to fix issues when editing file with VIM inside TMUX
 alias tmux="TERM=screen-256color-bce tmux"
+source ~/vim-config/git-completion.bash
+
 export CLICOLOR=1

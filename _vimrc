@@ -86,7 +86,7 @@
     let g:NERDTreeWinPos = "right"
 
 " Ack
-    let g:ackprg="ack-grep -H --nocolor --nogroup --column" "Only for Debian/Ubuntu were name is not ack
+    let g:ackprg="ack -H --nocolor --nogroup --column" "Only for Debian/Ubuntu were name is not ack
 
 " MiniBufXplorer settings
     let g:miniBufExplMaxSize=2              " set max size to 2 lines
