@@ -88,6 +88,11 @@
 " Ack
     let g:ackprg="ack -H --nocolor --nogroup --column" "Only for Debian/Ubuntu were name is not ack
 
+" Command-t
+    " Without the bellow key binding in tmux, the command-t does not work properly when key-down is pressed
+    " Tip from http://superuser.com/a/238164
+    map <Esc>[B <Down>
+
 " MiniBufXplorer settings
     let g:miniBufExplMaxSize=2              " set max size to 2 lines
     let g:miniBufExplMapWindowNavVim= 1     " Navigate trough buffers with Control + [hjkl]
