@@ -3,7 +3,11 @@
     syntax enable
 
 " Pathogen install
-    call pathogen#runtime_append_all_bundles()
+    let g:pathogen_disabled = []
+    call add(g:pathogen_disabled, 'vim-markdown')
+    call add(g:pathogen_disabled, 'nerdcommenter')
+    call add(g:pathogen_disabled, 'vim-fugitive')
+    call pathogen#incubate('bundle/{}')
     call pathogen#helptags()
 
 " Encoding
@@ -38,7 +42,7 @@
 
         set statusline=%<%f\                    " Filename
         set statusline+=%w%h%m%r                " Options
-        set statusline+=%{fugitive#statusline()} "  Git Hotness
+    "    set statusline+=%{fugitive#statusline()} "  Git Hotness
         set statusline+=\ [%{&ff}/%Y]           " Show filetype in statusline
         set statusline+=\ [%{getcwd()}]          " current dir
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
