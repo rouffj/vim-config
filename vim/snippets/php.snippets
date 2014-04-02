@@ -11,22 +11,22 @@ snippet cont
 		}
 	}
 
-snippet type
-	<?php
+snippet formtype
+	${1:namespace}
 	
 	use Symfony\Component\Form\AbstractType;
-	use Symfony\Component\Form\FormBuilder;
+	use Symfony\Component\Form\FormBuilderInterface;
 	
-	/**
-	 * ${1:type}Type.
-	 *
-	 * @author ${2:Olivier Dolbeau <contact@odolbeau>}
-	 */
-	class $1Type extends AbstractType
+	class $2Type extends AbstractType
 	{
-		public function buildForm(FormBuilder $builder, array $options)
+		public function buildForm(FormBuilderInterface $builder, array $options)
 		{
 			${3}
+		}
+		
+		public function getName()
+		{
+		    return '${4}';
 		}
 	}
 

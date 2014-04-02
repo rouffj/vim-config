@@ -1,7 +1,14 @@
-export PATH=/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/Cellar/php53/5.3.17/bin:/usr/local/Cellar/php54/5.4.7/bin/php:/usr/local/sbin:/usr/local/bin:$PATH
+export PATH=/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/Cellar/php54/5.4.15/bin:$PATH
 
 # Allow to fix issues when editing file with VIM inside TMUX
 alias tmux="TERM=screen-256color-bce tmux"
 source ~/vim-config/git-completion.bash
 
+# vi-mode
+bind -m vi-insert 'Control-l: clear-screen'
+set -o vi
+
+export LC_ALL=en_US.UTF-8       # http://stackoverflow.com/questions/1830394/python-locale-strange-error-whats-going-on-here-exactly
 export CLICOLOR=1
+export EDITOR=vim
+export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" # https://langui.sh/2014/03/10/wunused-command-line-argument-hard-error-in-future-is-a-harsh-mistress/

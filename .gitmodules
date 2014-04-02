@@ -43,3 +43,9 @@
 [submodule "vendor/pathogen"]
 	path = vendor/pathogen
 	url = git://github.com/tpope/vim-pathogen.git
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = https://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/pdv"]
+	path = vim/bundle/pdv
+	url = git://github.com/tobyS/pdv.git

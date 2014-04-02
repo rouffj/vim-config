@@ -7,6 +7,7 @@
     call add(g:pathogen_disabled, 'vim-markdown')
     call add(g:pathogen_disabled, 'nerdcommenter')
     call add(g:pathogen_disabled, 'vim-fugitive')
+    call add(g:pathogen_disabled, 'taglist')
     call pathogen#incubate('bundle/{}')
     call pathogen#helptags()
 
@@ -19,7 +20,8 @@
     set background=dark                     " dark background is better!
     let php_sql_query = 1                   " SQL queries
     let php_htmlInStrings = 1               " HTML
-    colorscheme solarized
+    colorscheme solarized                   " Enable solarized vim theme
+    "set background=light                    " Enable solarized light
     if has('gui_running')
         set guifont=Monospace\ 8
         let g:solarized_style="light"
@@ -74,6 +76,9 @@
     let mapleader   = ","
     let g:mapleader = ","
 
+    " Navigate between buffers with "TAB"
+    nnoremap <Tab> :bnext<CR>
+
     " Delete trailing spaces
     nmap <silent> <C-F10> :%s/\s\+$//g<CR>
     nmap <silent> <C-S-F10> :%s/^\s\+$//g<CR>
@@ -83,19 +88,21 @@
     " Insert php namespace and create class name
     nmap <silent> <C-S-F9> ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
 
-    nnoremap <F2> :NERDTreeToggle<CR>
+    nnoremap <F2> :set nonu! \| NERDTreeToggle<CR>
     nnoremap <F3> :TlistToggle<CR>
 
 " NERDTree
     let g:NERDTreeWinPos = "right"
 
 " Ack
-    let g:ackprg="ack -H --nocolor --nogroup --column" "Only for Debian/Ubuntu were name is not ack
+    let g:ackprg="ack -H --nocolor --nogroup --column --type-set=css=.less,.css" "Only for Debian/Ubuntu were name is not ack
 
 " Command-t
     " Without the bellow key binding in tmux, the command-t does not work properly when key-down is pressed
     " Tip from http://superuser.com/a/238164
     map <Esc>[B <Down>
+    set wildignore+=app/cache/**,build/**       " Ignore generated files by symfony+vendor directory
+    set wildignore+=.git/**                     " Ignore SCM folders
 
 " MiniBufXplorer settings
     let g:miniBufExplMaxSize=2              " set max size to 2 lines
@@ -124,6 +131,7 @@
     autocmd BufRead *.twig set filetype=htmltwig.html
     autocmd BufRead *.phps set filetype=php
     autocmd BufRead *.phpd set filetype=php
+    autocmd BufNewFile,BufRead *.less set filetype=less
 
 " Makefile
 "    autocmd FileType make set noexpandtab
