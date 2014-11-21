@@ -49,3 +49,6 @@
 [submodule "vim/bundle/pdv"]
 	path = vim/bundle/pdv
 	url = git://github.com/tobyS/pdv.git
+[submodule "vim/bundle/vim-symfony"]
+	path = vim/bundle/vim-symfony
+	url = https://github.com/docteurklein/vim-symfony.git

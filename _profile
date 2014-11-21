@@ -1,4 +1,4 @@
-export PATH=/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/sbin:/usr/local/bin:/usr/local/Cellar/php54/5.4.15/bin:$PATH
+export PATH=~/.composer/vendor/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 # Allow to fix issues when editing file with VIM inside TMUX
 alias tmux="TERM=screen-256color-bce tmux"
@@ -11,4 +11,12 @@ set -o vi
 export LC_ALL=en_US.UTF-8       # http://stackoverflow.com/questions/1830394/python-locale-strange-error-whats-going-on-here-exactly
 export CLICOLOR=1
 export EDITOR=vim
+export HOMEBREW_GITHUB_API_TOKEN=583945e68bd809a31d33884bc6e82c71a6d1b701
 export ARCHFLAGS="-Wno-error=unused-command-line-argument-hard-error-in-future" # https://langui.sh/2014/03/10/wunused-command-line-argument-hard-error-in-future-is-a-harsh-mistress/
+
+#export http_proxy=
+#export https_proxy=
+
+#export http_proxy=fr-proxy.groupinfra.com:3128
+#export https_proxy=fr-proxy.groupinfra.com:3128
+#export no_proxy=localhost,127.0.0.1

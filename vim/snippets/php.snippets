@@ -16,6 +16,7 @@ snippet formtype
 	
 	use Symfony\Component\Form\AbstractType;
 	use Symfony\Component\Form\FormBuilderInterface;
+	use 
 	
 	class $2Type extends AbstractType
 	{
@@ -23,7 +24,13 @@ snippet formtype
 		{
 			${3}
 		}
-		
+
+		public function setDefaultOptions(OptionsResolverInterface $resolver) {
+		    $resolver->setDefaults(array(
+		        'data_class' => 'AppBundle\Entity\Post'
+		    ));
+		}
+
 		public function getName()
 		{
 		    return '${4}';

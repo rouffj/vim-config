@@ -1,6 +1,8 @@
 " Basics
     set nocompatible                        " Use defauts Vim
     syntax enable
+    set mouse=a                             " Enable selection of VIM text with mouse. To past the selected text on MAC OS use `"*y`. 
+                                            " Double click on VIM link is possible with this option activated.
 
 " Pathogen install
     let g:pathogen_disabled = []
@@ -17,10 +19,10 @@
     set encoding=UTF-8                      " Display UTF-8
 
 " Color
-    set background=dark                     " dark background is better!
     let php_sql_query = 1                   " SQL queries
     let php_htmlInStrings = 1               " HTML
     colorscheme solarized                   " Enable solarized vim theme
+    set background=dark                     " dark background is better!
     "set background=light                    " Enable solarized light
     if has('gui_running')
         set guifont=Monospace\ 8
@@ -79,6 +81,10 @@
     " Navigate between buffers with "TAB"
     nnoremap <Tab> :bnext<CR>
 
+    " With insert mode only
+    "map user completion with Control-g (usefull to have autocompletion on services and routes)
+    imap <C-g> <C-x><C-u>
+
     " Delete trailing spaces
     nmap <silent> <C-F10> :%s/\s\+$//g<CR>
     nmap <silent> <C-S-F10> :%s/^\s\+$//g<CR>
@@ -103,6 +109,7 @@
     map <Esc>[B <Down>
     set wildignore+=app/cache/**,build/**       " Ignore generated files by symfony+vendor directory
     set wildignore+=.git/**                     " Ignore SCM folders
+    "let g:CommandTFileScanner="find"            " Use native find command instead of ruby, faster on large projects
 
 " MiniBufXplorer settings
     let g:miniBufExplMaxSize=2              " set max size to 2 lines
@@ -127,17 +134,21 @@
     nnoremap <leader>d :call PhpDocSingle()<CR>
     vnoremap <leader>d :call PhpDocRange()<CR>
 
-" twig
+" filetype
     autocmd BufRead *.twig set filetype=htmltwig.html
     autocmd BufRead *.phps set filetype=php
     autocmd BufRead *.phpd set filetype=php
     autocmd BufNewFile,BufRead *.less set filetype=less
+    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Makefile
 "    autocmd FileType make set noexpandtab
 
 " Snipmate
     let g:snips_author = "Joseph Rouff <rouffj@gmail.com>"
+    let g:snipMate = {}
+    let g:snipMate.scope_aliases = {}
+    let g:snipMate.scope_aliases['php'] = 'php'     " Load php snippets only instead of php/html/javascript
 
 " use :W to force save when forgot to open file in root
     command W w !sudo tee % > /dev/null
