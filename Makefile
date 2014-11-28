@@ -8,7 +8,7 @@ help:
 
 install: _submodule symlink
 	@echo "Compiling command-t extension..."
-	@cd $(DOTFILES_DIR)/vim/bundle/command-t; rake make $(NO_OUTPUT);
+	@cd $(DOTFILES_DIR)/vim/bundle/command-t/ruby/command-t; ruby extconf.rb $(NO_OUTPUT); make;
 	@echo "Installing ack bundle..."
 	@cd $(DOTFILES_DIR)/vim/bundle/ack; rake install $(NO_OUTPUT);
 
