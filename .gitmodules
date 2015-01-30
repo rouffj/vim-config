@@ -52,3 +52,6 @@
 [submodule "vim/bundle/vim-symfony"]
 	path = vim/bundle/vim-symfony
 	url = https://github.com/docteurklein/vim-symfony.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git

@@ -22,8 +22,8 @@
     let php_sql_query = 1                   " SQL queries
     let php_htmlInStrings = 1               " HTML
     colorscheme solarized                   " Enable solarized vim theme
-    set background=dark                     " dark background is better!
-    "set background=light                    " Enable solarized light
+    "set background=dark                     " dark background is better!
+    set background=light                    " Enable solarized light
     if has('gui_running')
         set guifont=Monospace\ 8
         let g:solarized_style="light"
@@ -143,6 +143,11 @@
 
 " Makefile
 "    autocmd FileType make set noexpandtab
+
+" UltiSnip
+    "let g:UltiSnipsExpandTrigger="<tab>"
+    "let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Snipmate
     let g:snips_author = "Joseph Rouff <rouffj@gmail.com>"
