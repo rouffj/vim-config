@@ -6,7 +6,7 @@ help:
 	@echo "install        Install & configure all things"
 	@echo "symlink        Re-install all symlinks to dotfiles (vim, tmux...)"
 
-install: _submodule symlink
+install:
 	@echo "Compiling command-t extension..."
 	@cd $(DOTFILES_DIR)/vim/bundle/command-t/ruby/command-t; ruby extconf.rb $(NO_OUTPUT); make;
 	@echo "Installing ack bundle..."

@@ -22,8 +22,8 @@
     let php_sql_query = 1                   " SQL queries
     let php_htmlInStrings = 1               " HTML
     colorscheme solarized                   " Enable solarized vim theme
-    "set background=dark                     " dark background is better!
-    set background=light                    " Enable solarized light
+    "set t_Co=256                           " Usefull for MacOS or
+    set t_Co=16                             " Usefull for gnome
     if has('gui_running')
         set guifont=Monospace\ 8
         let g:solarized_style="light"
@@ -101,7 +101,7 @@
     let g:NERDTreeWinPos = "right"
 
 " Ack
-    let g:ackprg="ack -H --nocolor --nogroup --column --type-set=css=.less,.css" "Only for Debian/Ubuntu were name is not ack
+    let g:ackprg="ack-grep -H --nocolor --nogroup --column --type-set=css=.less,.css" "Only for Debian/Ubuntu were name is not ack
 
 " Command-t
     " Without the bellow key binding in tmux, the command-t does not work properly when key-down is pressed
