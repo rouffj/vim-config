@@ -101,7 +101,7 @@
     let g:NERDTreeWinPos = "right"
 
 " Ack
-    let g:ackprg="ack-grep -H --nocolor --nogroup --column --type-set=css=.less,.css" "Only for Debian/Ubuntu were name is not ack
+    let g:ackprg="ack -H --nocolor --nogroup --column" "Only for Debian/Ubuntu were name is not ack
 
 " Command-t
     " Without the bellow key binding in tmux, the command-t does not work properly when key-down is pressed

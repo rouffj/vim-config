@@ -28,3 +28,8 @@ export HISTIGNORE=ls
 #aliases
 #alias my-vim-git="vim `git status --porcelain | sed -ne 's/^ M //p' | perl -p -e 's/\n/ /'`" # Suppress " M" and replace \n by spaces
 alias my-big-files='function __bigfiles() { find $1 -size +1G -exec ls -lh {} \; ; unset -f __bigfiles; }; __bigfiles' # Get big files in a given directory
+alias my-ez-cc='cd ezpublish-core && php bin/php/ezcache.php --clear-all && cd ..'
+
+if [ -f ./_private_profile ]; then
+    . ./_private_profile
+fi
