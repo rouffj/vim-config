@@ -2,7 +2,6 @@ export PATH=~/.composer/vendor/bin:/usr/local/lib/node_modules:/usr/local/share/
 
 # Allow to fix issues when editing file with VIM inside TMUX
 alias tmux="TERM=screen-256color-bce tmux"
-source ~/vim-config/git-completion.bash
 
 # vi-mode
 bind -m vi-insert 'Control-l: clear-screen'
@@ -29,7 +28,18 @@ export HISTIGNORE=ls
 #alias my-vim-git="vim `git status --porcelain | sed -ne 's/^ M //p' | perl -p -e 's/\n/ /'`" # Suppress " M" and replace \n by spaces
 alias my-big-files='function __bigfiles() { find $1 -size +1G -exec ls -lh {} \; ; unset -f __bigfiles; }; __bigfiles' # Get big files in a given directory
 alias my-ez-cc='cd ezpublish-core && php bin/php/ezcache.php --clear-all && cd ..'
+alias my-list-packages-installed='aptitude search "~i" -F "%c %p %v %d %I"' # List all packages installed on a server. "{status} {name} {version} {desc} {size}" (https://aptitude.alioth.debian.org/doc/en/ch02s05s01.html#secDisplayFormat)
 
-if [ -f ./_private_profile ]; then
-    . ./_private_profile
+if [ -f ~/vim-config/_private_profile ]; then
+    source ~/vim-config/_private_profile
 fi
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
+# autocompletion files
+source ~/.bin/tmuxinator.bash
+source ~/vim-config/git-completion.bash
+
+export PS1="\[\033[1;35m\]\u\[\033[0m\]:\[\033[1;35m\]\w\[\033[0m\]$ " # 'myuser:dir$ ' (http://blog.taylormcgann.com/2012/06/13/customize-your-shell-command-prompt/)

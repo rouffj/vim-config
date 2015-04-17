@@ -26,6 +26,8 @@
     my-rm-last-commit = "!git reset --hard HEAD^" # Suppress last commit
     my-diff = "!git diff origin/master..HEAD" # Allow to get diff between current branch and remote master
     my-what-happened-on-remote = "!git fetch -p && git diff origin/$1..$1" # See what happened on given branch since the last fetch
+    my-job= "!git diff HEAD --stat && git diff HEAD" # Display first updated files + all changes
+    my-pr-squash="!git rebase -i origin/master" # Transform given PR from multiple to only one commit
 [color]
     branch = auto
     diff = auto

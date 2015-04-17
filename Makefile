@@ -16,7 +16,7 @@ symlink: _clean
 	ln -s $(DOTFILES_DIR)/_vimrc $(HOME)/.vimrc
 	ln -s $(DOTFILES_DIR)/gitconfig $(HOME)/.gitconfig
 	ln -s $(DOTFILES_DIR)/screenrc $(HOME)/.screenrc
-	ln -s $(DOTFILES_DIR)/_tmux $(HOME)/.tmux.conf
+	ln -s $(DOTFILES_DIR)/_tmux.conf $(HOME)/.tmux.conf
 	ln -s $(DOTFILES_DIR)/vim $(HOME)/.vim
 	ln -s $(DOTFILES_DIR)/_profile $(HOME)/.profile
 	ln -s $(DOTFILES_DIR)/_gitignore $(HOME)/.gitignore

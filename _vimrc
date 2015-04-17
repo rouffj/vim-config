@@ -157,3 +157,6 @@
 
 " use :W to force save when forgot to open file in root
     command W w !sudo tee % > /dev/null
+
+" macros
+    let @t='d/publicO/** **/€ku {}€kl@inheritDoc/);A€kb{}€kr:w€kb€kb'
