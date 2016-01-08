@@ -36,4 +36,4 @@
 [rerere]
     enabled = 1
 [push]
-    default = tracking
+    default = nothing # or simple but not other (https://git-scm.com/docs/git-config)
