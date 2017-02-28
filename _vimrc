@@ -5,13 +5,14 @@
                                             " Double click on VIM link is possible with this option activated.
 
 " Pathogen install
-    let g:pathogen_disabled = []
-    call add(g:pathogen_disabled, 'vim-markdown')
-    call add(g:pathogen_disabled, 'nerdcommenter')
-    call add(g:pathogen_disabled, 'vim-fugitive')
-    call add(g:pathogen_disabled, 'taglist')
-    call pathogen#incubate('bundle/{}')
-    call pathogen#helptags()
+    "let g:pathogen_disabled = []
+    "call add(g:pathogen_disabled, 'vim-markdown')
+    "call add(g:pathogen_disabled, 'nerdcommenter')
+    "call add(g:pathogen_disabled, 'vim-fugitive')
+    "call add(g:pathogen_disabled, 'taglist')
+    "call pathogen#incubate('bundle/{}')
+    "call pathogen#helptags()
+    execute pathogen#infect()
 
 " Encoding
     set ff=unix                             " Unix EOL

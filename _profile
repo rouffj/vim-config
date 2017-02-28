@@ -1,3 +1,4 @@
+env zsh
 export PATH=~/.composer/vendor/bin:/usr/local/lib/node_modules:/usr/local/share/npm/bin:/usr/local/sbin:/usr/local/bin:$PATH
 
 # Allow to fix issues when editing file with VIM inside TMUX
@@ -23,18 +24,7 @@ export HISTIGNORE=ls
 #export https_proxy=fr-proxy.groupinfra.com:3128
 #export no_proxy=localhost,127.0.0.1
 
-## Aliases
-#alias my-vim-git="vim `git status --porcelain | sed -ne 's/^ M //p' | perl -p -e 's/\n/ /'`" # Suppress " M" and replace \n by spaces
-alias my-big-files='function __bigfiles() { find $1 -size +1G -exec ls -lh {} \; ; unset -f __bigfiles; }; __bigfiles' # Get big files in a given directory
-alias my-ez-cc='cd ezpublish-core && php bin/php/ezcache.php --clear-all && cd ..'
-alias my-dir-size='du -csh $1' # Get total size in Mo/Go of given directories
-alias my-list-packages-installed='aptitude search "~i" -F "%c %p %v %d %I"' # List all packages installed on a server. "{status} {name} {version} {desc} {size}" (https://aptitude.alioth.debian.org/doc/en/ch02s05s01.html#secDisplayFormat)
-alias my-restart-deamon='function __my_restart_deamon() { launchctl unload $1 && launchctl load $1; }; __my_restart_deamon'
-alias my-portforward-rules='netstat -na | grep tcp4 | grep LISTEN' # Display active portforwarding rules. Rules from virtualbox should be displayed
-alias my-iptables-ls='sudo iptables -t nat -L -v -n' # List all rules
-alias my-iptable-rm-rule='sudo iptables -t nat -D PREROUTING 1' # Delete a rule by its number. Start with 1.
-alias my-php-lint='find $1 -name *.php -exec php -l {} \;' # Lint all php files on given dir
-alias my-dump-port-traffic='tcpdump -q dst port $1 and greater $2 -w network_dump.txt' # Intercept all packets (size > $2) sent to local server on the port $1 and store it to a network_dump.txt file
+source ~/.aliases
 
 if [ -f ~/vim-config/_private_profile ]; then
     source ~/vim-config/_private_profile

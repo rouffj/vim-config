@@ -19,7 +19,7 @@
     cat  = cat-file -p
     lg   = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset%s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
     uncommit = update-ref HEAD HEAD^
-    delete-merged-branches = "!f() { git branch --merged master | grep --invert-match --perl-regex 'master|stable|\\*' | xargs -n 1 git branch --delete; }; f"
+    my-delete-merged-branches = "!f() { git branch --merged master | grep --invert-match --perl-regex 'master|stable|\\*' | xargs -n 1 git branch --delete; }; f"
     my-update-local-branches = "!f() { git fetch -p && git branch | xargs -n 1 git rebase; }; f" # Allow to update all local branches with remote branches with same name
     my-rebase-on-master = "!f() { git fetch -p && git rebase origin/master; }; f" # Rebase current branch with remote master
     my-reset-local-on-given-remote = "!git fetch -p $2 && git reset --hard $2" # Reset given local branch on remote one (http://stackoverflow.com/a/1628334)
