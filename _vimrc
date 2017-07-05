@@ -1,9 +1,9 @@
-" Basics
-    set nocompatible                        " Use defauts Vim
-    syntax enable
-    set mouse=a                             " Enable selection of VIM text with mouse. To past the selected text on MAC OS use `"*y`. 
-                                            " Double click on VIM link is possible with this option activated.
 
+    call pathogen#incubate()
+    filetype off
+    syntax on
+    filetype plugin indent on
+    "
 " Pathogen install
     "let g:pathogen_disabled = []
     "call add(g:pathogen_disabled, 'vim-markdown')
@@ -12,7 +12,19 @@
     "call add(g:pathogen_disabled, 'taglist')
     "call pathogen#incubate('bundle/{}')
     "call pathogen#helptags()
-    execute pathogen#infect()
+    "execute pathogen#infect()
+    "filetype off
+    "syntax on
+    "filetype plugin indent on
+
+" Basics
+    set nocompatible                        " Use defauts Vim
+    "syntax on
+    "filetype plugin indent on
+    set clipboard=unnamed                   " y/p copy to mac clipboard https://evertpot.com/osx-tmux-vim-copy-paste-clipboard/
+
+    set mouse=a                             " Enable selection of VIM text with mouse. To past the selected text on MAC OS use `"*y`. 
+                                            " Double click on VIM link is possible with this option activated.
 
 " Encoding
     set ff=unix                             " Unix EOL
@@ -98,6 +110,18 @@
     nnoremap <F2> :set nonu! \| NERDTreeToggle<CR>
     nnoremap <F3> :TlistToggle<CR>
 
+" TypeScript tsuquyomi
+
+    let g:tsuquyomi_completion_detail = 1 " Display signature detail instead of only accessor name
+    let g:tsuquyomi_shortest_import_path = 1 " Use the shortest path for :TsuImport
+
+    "on ',h' get property/method definition
+    autocmd FileType typescript nmap <Leader>h :echo tsuquyomi#hint()<CR>
+    "on ',i' Import the class under cursor
+    autocmd FileType typescript nmap <Leader>i :TsuImport<CR>
+    "on ',g' Import the class under cursor
+    autocmd FileType typescript nmap <Leader>g :TsuDefinition<CR>
+
 " NERDTree
     let g:NERDTreeWinPos = "right"
 
@@ -155,6 +179,10 @@
     let g:snipMate = {}
     let g:snipMate.scope_aliases = {}
     let g:snipMate.scope_aliases['php'] = 'php'     " Load php snippets only instead of php/html/javascript
+
+" Autocompletion
+    "filetype plugin on
+    set omnifunc=syntaxcomplete#Complete
 
 " use :W to force save when forgot to open file in root
     command W w !sudo tee % > /dev/null

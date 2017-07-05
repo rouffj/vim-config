@@ -8,7 +8,7 @@ help:
 
 install:
 	@echo "Compiling command-t extension..."
-	@cd $(DOTFILES_DIR)/vim/bundle/command-t/ruby/command-t; ruby extconf.rb $(NO_OUTPUT); make;
+	cd $(DOTFILES_DIR)/vim/bundle/command-t/ruby/command-t; ruby extconf.rb ; make;
 	@echo "Installing ack bundle..."
 	@cd $(DOTFILES_DIR)/vim/bundle/ack; rake install $(NO_OUTPUT);
 
@@ -25,6 +25,8 @@ symlink: _clean
 
 _clean:
 	rm -f $(HOME)/.vimrc $(HOME)/.gitconfig $(HOME)/.screenrc $(HOME)/.tmux.conf $(HOME)/.vim $(HOME)/.profile $(HOME)/.gitignore
+	cd vim/bundle/command-t/ruby/command-t; make clean;
+
 
 _submodule:
 	git submodule update --init
